@@ -6,3 +6,4 @@ gem 'jekyll'
 gem 'webrick'
 
 # gem "rails"
+gem 'jekyll-postcss'
