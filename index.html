@@ -14,11 +14,12 @@ title: connor bell
             <h1 class="text-4xl font-bold border-b border-white inline pb-2">Projects</h1>
         </div>
 
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% for project in site.data.projects %}
 
             <!-- Project Card -->
-            <a class="border border-white rounded shadow overflow-hidden flex flex-col" href="{{project.link}}">
+            <a class="border border-white rounded shadow-lg overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-white/25 transition-all"
+                href="{{project.link}}">
                 <div class="w-full h-full overflow-hidden">
                     <img class="h-full w-auto" src="{{project.head}}" alt="{{project.name}}">
                 </div>
