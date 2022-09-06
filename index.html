@@ -2,7 +2,7 @@
 layout: default
 title: connor bell
 ---
-<div id="wrapper" class="w-full px-4 text-white flex flex-col gap-12 mb-6">
+<div id="wrapper" class="w-full px-4 text-white flex flex-col gap-24 mb-6">
     <!-- home -->
     <section id="home" class="container h-screen mx-auto">
 
@@ -37,7 +37,7 @@ title: connor bell
                     {% assign tags = project.tags | split: " " %}
                     {% assign techs = project.tech | split: " " %}
 
-                    {% if tags or techs  %}
+                    {% if tags or techs %}
 
                     <div class="flex flex-row gap-2">
                         {% for tag in tags %}
@@ -63,7 +63,26 @@ title: connor bell
 
     <!-- About -->
     <section id="about" class="container mx-auto">
-        <h1 class="text-4xl font-bold border-b border-white inline pb-2">About</h1>
+        <div class="flex flex-row gap-12">
+            <div class="grow">
+                <h1 class="text-4xl font-bold border-b border-white inline pb-2">About</h1>
+            </div>
+
+            <p class="text-xl grow leading-loose">
+                hi! i'm connor. <br>
+                i write code and make art <br>
+                my code lives on <a class="underline" href="https://git.sr.ht/~connorbell/">SourceHut</a> and
+                <a class="underline" href="https://shadertoy.com">Shadertoy</a>.<br>
+                i'm a Sr. Software Developer at Unity. CV. <br>
+                i help admin the <a class="underline" href="https://shader.zone">shader.zone</a> discord. <br>
+                i live in the unceded territory of Mi'kma'ki <br>
+                say hi@connorbell.ca <br>
+            </p>
+
+            <div class="justify-end flex-shrink w-96">
+                <img class="w-full h-auto rounded-full" src="assets/images/connorbell.jpg" alt="Connor Bell">
+            </div>
+        </div>
     </section>
 
     <!-- Contact -->
