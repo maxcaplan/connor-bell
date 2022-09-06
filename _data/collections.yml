@@ -1,0 +1,124 @@
+- name: Apollonian
+  head: assets/images/gifs/collections/apollonian/1_small.gif
+  link: projects/animation/apollonian.html
+  date: 2018
+
+- name: Collabs
+  head: assets/images/gifs/collections/collabs/cab1_3_small.gif
+  link: projects/animation/collabs.html
+  date: 2020
+
+- name: Feedback
+  head: assets/images/gifs/collections/feedback/1_small.gif
+  link: projects/animation/feedback.html
+  date: 2020
+
+- name: fgen
+  head: assets/images/gifs/collections/fgen/1_small.gif
+  link: projects/animation/fgen.html
+  date: 2020
+
+- name: Flips
+  head: assets/images/gifs/collections/flips/1_small.gif
+  link: projects/animation/flips.html
+  date: 2020
+
+- name: Floor
+  head: assets/images/gifs/collections/floor/1_small.gif
+  link: projects/animation/floor.html
+  date: 2020
+
+- name: kifs
+  head: assets/images/gifs/collections/kifs/3_small.gif
+  link: projects/animation/kifs.html
+  date: 2020
+
+- name: kifs2
+  head: assets/images/gifs/collections/kifs2/kifs1.gif
+  link: projects/animation/kifs2.html
+  date: 2021
+
+- name: Liminal
+  head: assets/images/gifs/collections/liminal/1_small.gif
+  link: projects/animation/liminal.html
+  date: 2020
+
+- name: lvfts
+  head: assets/images/gifs/collections/lvfts/1_small.gif
+  link: projects/animation/lvfts.html
+  date: 2020
+
+- name: lvfts2
+  head: assets/images/gifs/collections/lvfts2/1_small.gif
+  link: projects/animation/lvfts2.html
+  date: 2020
+
+- name: menger
+  head: assets/images/gifs/collections/menger/1_small.gif
+  link: projects/animation/menger.html
+  date: 2020
+
+- name: misc
+  head: assets/images/gifs/collections/misc/1_small.gif
+  link: projects/animation/misc.html
+  date: 2020
+
+- name: orbs
+  head: assets/images/gifs/collections/orbs/1_small.gif
+  link: projects/animation/orbs.html
+  date: 2020
+
+- name: planet
+  head: assets/images/gifs/collections/planet/1_small.gif
+  link: projects/animation/planet.html
+  date: 2020
+
+- name: polar
+  head: assets/images/gifs/collections/polar/1_small.gif
+  link: projects/animation/polar.html
+  date: 2020
+
+- name: polarmod
+  head: assets/images/gifs/collections/polarmod/1_small.gif
+  link: projects/animation/polarmod.html
+  date: 2020
+
+- name: polytopes
+  head: assets/images/gifs/collections/polytopes/1_small.gif
+  link: projects/animation/polytopes.html
+  date: 2020
+
+- name: tissue
+  head: assets/images/gifs/collections/tissue/1_small.gif
+  link: projects/animation/tissue.html
+  date: 2020
+
+- name: tuts
+  head: assets/images/gifs/collections/tutorials/1.png
+  link: projects/animation/tutorials.html
+  date: 2019
+
+- name: reactor
+  head: assets/images/gifs/collections/reactor/1_small.gif
+  link: projects/animation/reactor.html
+  date: 2020
+
+- name: stickers
+  head: assets/images/gifs/collections/stickers/3_small.gif
+  link: projects/animation/stickers.html
+  date: 2020
+
+- name: Tunnels
+  head: assets/images/gifs/collections/tunnels/1_small.gif
+  link: projects/animation/tunnels.html
+  date: 2020
+
+- name: Volumetric
+  head: assets/images/gifs/collections/volumetric/1_small.gif
+  link: projects/animation/volumetric.html
+  date: 2020
+
+- name: Zoomers
+  head: assets/images/gifs/collections/zoomers/1_small.gif
+  link: projects/animation/zoomers.html
+  date: 2020

@@ -1,0 +1,11 @@
+- name: Twitter
+  link: https://twitter.com/connrbell
+  logo: logo-twitter
+
+- name: Instagram
+  link: https://instagram.com/connrbell
+  logo: logo-instagram
+  
+- name: LinkedIn
+  link: https://linkedin.com/connorbell
+  logo: logo-linkedin
