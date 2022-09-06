@@ -12,16 +12,20 @@
 
 <body class="bg-black text-white">
   <!-- Navbar -->
-  <nav id="navbar" class="w-full relative">
+  <nav id="navbar" class="w-full relative px-4">
     <div class="container mx-auto flex flex-row items-center py-2">
       <div id="logo">
-        <a class="text-4xl font-bold" href="#">connor <br class="md:hidden"> bell</a>
+        <a class="text-3xl md:text-4xl font-bold" href="#">
+          connor
+          <span class="md:hidden">b.</span>
+          <span class="hidden md:inline">bell</span>
+        </a>
       </div>
 
       <div id="links" class="grow hidden md:flex flex-row justify-end">
         <div class="flex flex-row gap-4 items-center">
-          <a class="text-xl" href="#projects">projects</a>
-          <a class="text-xl" href="#about">about</a>
+          <a class="text-xl hover:text-cyan-200 hover:underline" href="#projects">projects</a>
+          <a class="text-xl hover:text-cyan-200 hover:underline" href="#about">about</a>
           <a class="text-xl leading-none px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition"
             href="#contact">
             contact
@@ -35,6 +39,12 @@
 
           {% endfor %}
         </div>
+      </div>
+
+      <div id="menu" class="grow flex md:hidden flex-row justify-end" href="#">
+        <a href="#" class="sticky top-0">
+          <ion-icon size="large" name="menu-outline"></ion-icon>
+        </a>
       </div>
     </div>
   </nav>
