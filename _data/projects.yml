@@ -59,7 +59,7 @@
   description: Slime mold simulation experiment with particle agents
 
 - name: Blog
-  head: assets/images/projects/physarum.jpg
+  head: assets/images/projects/physarum.png
   link: projects/blog.html
   tech: writing shaders
   description: Some old blog posts I wrote. Maybe i'll write more someday :)
