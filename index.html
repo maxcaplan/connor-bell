@@ -2,14 +2,14 @@
 layout: default
 title: connor bell
 ---
-<div id="wrapper" class="w-full px-4 text-white flex flex-col gap-24 mb-24">
+<div id="wrapper" class="w-full text-white flex flex-col gap-24 mb-24">
     <!-- home -->
-    <section id="home" class="container h-screen mx-auto">
-
+    <section id="home" class="w-screen h-screen">
+        <canvas id="home-shader" class="w-full h-full"></canvas>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="container mx-auto">
+    <section id="projects" class="container mx-auto px-4">
         <div class="flex justify-center mb-12">
             <h1 class="text-4xl font-bold border-b border-white inline pb-2">Projects</h1>
         </div>
@@ -63,7 +63,7 @@ title: connor bell
     </section>
 
     <!-- About -->
-    <section id="about" class="container mx-auto">
+    <section id="about" class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row gap-12">
             <div class="flex justify-center md:justify-start md:block md:grow">
                 <h1 class="text-4xl font-bold border-b border-white inline pb-2">About</h1>
@@ -93,7 +93,7 @@ title: connor bell
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="container mx-auto">
+    <section id="contact" class="container mx-auto px-4">
         <div class="flex justify-center mb-12">
             <h1 class="text-4xl font-bold border-b border-white inline pb-2">Contact</h1>
         </div>
@@ -122,3 +122,6 @@ title: connor bell
         </div>
     </section>
 </div>
+
+<script src="/assets/js/three.js"></script>
+<script src="/assets/js/home/home-shader.js"></script>
