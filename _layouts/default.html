@@ -25,7 +25,7 @@
     say hi@connorbell.ca">
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url | append: page.url }}" />
-  <meta property="og:image" content="{{ site.url | append: " /assets/images/connorbell.jpg" }}" />
+  <meta property="og:image" content="{{ site.url | append: "/assets/images/connorbell.jpg" }}" />
 
   <!-- Twitter Cards Metadata -->
   <meta name="twitter:card" content="summary_large_image">
@@ -39,8 +39,7 @@
     i help admin the shader.zone discord.
     i live in the unceded territory of Mi'kma'ki
     say hi@connorbell.ca">
-  <meta name="twitter:image"
-    content="{{ site.url | append: " /assets/images/connorbell.jpg" }}">
+  <meta name="twitter:image" content="{{ site.url | append: "/assets/images/connorbell.jpg" }}">
 
   <!-- Title/Favicon -->
   <title>{{ page.title }}</title>
@@ -53,63 +52,15 @@
 
 <body class="bg-black text-white">
   <!-- Navbar -->
-  <nav id="navbar" class="w-full relative px-4">
-    <div class="container mx-auto flex flex-row items-center py-2">
-      <div id="logo">
-        <a class="text-3xl md:text-4xl font-bold" href="#">
-          connor
-          <span class="md:hidden">b.</span>
-          <span class="hidden md:inline">bell</span>
-        </a>
-      </div>
-
-      <div id="links" class="grow hidden md:flex flex-row justify-end">
-        <div class="flex flex-row gap-4 items-center">
-          <a class="text-xl hover:text-cyan-200 hover:underline" href="#projects">projects</a>
-          <a class="text-xl hover:text-cyan-200 hover:underline" href="#about">about</a>
-          <a class="text-xl leading-none px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition"
-            href="#contact">
-            contact
-          </a>
-
-          {% for social in site.data.socials %}
-
-          <a class="text-2xl leading-none" href="{{social.link}}" target="_blank">
-            <ion-icon name="{{social.logo}}"></ion-icon>
-          </a>
-
-          {% endfor %}
-        </div>
-      </div>
-
-      <div id="menu" class="grow flex md:hidden flex-row justify-end" href="#">
-        <a href="#" class="sticky top-0">
-          <ion-icon size="large" name="menu-outline"></ion-icon>
-        </a>
-      </div>
-    </div>
-  </nav>
+  {% include navbar.html %}
 
   <!-- Main Page Content -->
-  {{ content }}
-
+  <div class="text-lg">
+    {{ content }}
+  </div>
 
   <!-- Footer -->
-  <div class="w-full px-4 py-6 bg-black text-neutral-400 border-t border-neutral-400">
-    <div class="container mx-auto">
-      <div class="flex flex-col md:flex-row gap-4">
-        <div class="md:grow flex flex-row gap-4 justify-center md:justify-end">
-          <a class="text-xl" href="#">projects</a>
-          <p>|</p>
-          <a class="text-xl" href="#">about</a>
-          <p>|</p>
-          <a class="text-xl" href="#">contact</a>
-        </div>
-
-        <p class="text-xl md:order-first flex justify-center md:justify-start">Copyright &copy; 2020</p>
-      </div>
-    </div>
-  </div>
+  {% include footer.html %}
 
   <!-- Ionicons library -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
