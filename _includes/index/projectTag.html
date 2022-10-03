@@ -1,0 +1,16 @@
+{% comment %}
+Tag component for project tags
+@param id {string} - A unique identifier for the tag
+@param name {string} - A name for the tag
+@param button {boolean} - Whether the tag should be a button element or a text element
+{% endcomment %}
+
+{% if include.button == true %} 
+
+<button id="{{include.id}}" class="tag">{{include.name | strip}}</button>
+
+{% else %}
+
+<p id="{{include.id}}" class="tag">{{include.name | strip}}</p>
+
+{% endif %}

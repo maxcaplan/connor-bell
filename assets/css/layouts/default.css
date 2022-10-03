@@ -1,14 +1,17 @@
---- --- html {
+--- 
+--- 
+
+html {
     width: 100%;
     height: 100%;
 }
 
 #wrapper {
-    margin-top: -96px;
-}  
+    margin-top: -54px;
+}
 
 @media only screen and (min-width: 768px) {
     #wrapper {
         margin-top: -56px;
-    }   
+    }
 }

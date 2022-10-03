@@ -1,65 +1,84 @@
 - name: Generative Art
   head: assets/images/projects/gifzone.gif
   link: projects/generative.html
-  tags: shaders art
+  tags:
+    - shaders
+    - art
   description: I make gifs
 
 - name: ShaderChain
   head: assets/images/projects/shaderchain.jpg
   link: projects/shaderchain.html
-  tags: shaders tools
+  tags:
+    - shaders
+    - tools
   description: Open source shader playground built in C++ and OpenFrameworks.
 
 - name: AR-SDFView
   head: assets/images/projects/arsdfview.jpg
   link: projects/arsdfview.html
-  tags: Swift Metal iOS shaders
+  tags:
+    - Swift
+    - Metal
+    - iOS shaders
   description: iOS framework to render SDFs in AR
 
 - name: Glitch Wizard
   head: assets/images/projects/glitchwizard.jpg
   link: projects/glitchwizard.html
-  tech: iOS shaders
+  tags:
+    - iOS shaders
   description: App I made with Allan Lavell that distorts images, gifs and videos
 
 - name: Interactive VR Conemarcher
   head: assets/images/projects/angeline.jpg
   link: projects/fitc.html
-  tech: Unity shaders
+  tags:
+    - Unity shaders
   description: Intro Titles collab with Cale Bradbury
 
 - name: FITC Web Unleashed Intro Credits
   head: assets/images/projects/fitc.png
   link: projects/fitc.html
-  tech: Threejs client-work
+  tags:
+    - Threejs
+    - client-work
   description: Intro Titles collab with Cale Bradbury
 
 - name: Moon Shadow
   head: assets/images/projects/moonshadow.jpg
   link: projects/moonshadow.html
-  tech: iOS shaders
+  tags:
+    - iOS shaders
   description: Free iOS/Android app that chroma-keys generative shaders to colors of live video
 
 - name: Shader-links
   head: assets/images/projects/links.png
   link: projects/shaderlinks.html
-  tech: web shaders
+  tags:
+    - web shaders
   description: Single page "link-in-bio" website template I host at links.connorbell.ca
 
 - name: Threejs-Fractal
   head: assets/images/projects/threejs-fractal.jpg
   link: projects/threejs-fractal.html
-  tech: web shaders
+  tags:
+    - web shaders
   description: Raymarched fractal I used to host on my website landing page
 
 - name: Physarum-Simulations
   head: assets/images/projects/physarum.png
   link: projects/physarum.html
-  tech: metal shaders
+  tags:
+    - Metal
+    - shaders
   description: Slime mold simulation experiment with particle agents
 
 - name: Blog
   head: assets/images/projects/physarum.png
   link: projects/blog.html
-  tech: writing shaders
+  tags:
+    - writing
+    - shaders
   description: Some old blog posts I wrote. Maybe i'll write more someday :)
+  hide: true
