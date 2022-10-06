@@ -3,7 +3,7 @@ layout: default
 title: connor bell
 ---
 
-<div class="w-full text-white flex flex-col gap-24 mb-24" id="wrapper">
+<div class="w-full text-white flex flex-col gap-16 mb-24" id="wrapper">
     <!-- Home -->
     <section class="w-screen h-screen" id="home">
         <canvas class="w-full h-full" id="home-shader"></canvas>
@@ -69,6 +69,10 @@ title: connor bell
         {% endif %}
     </section>
 
+    <div class="container mx-auto px-4">
+        {% include divider.html %}
+    </div>
+
     <!-- About -->
     <section class="container mx-auto px-4" id="about">
         <div class="flex flex-col md:flex-row gap-12">
@@ -108,6 +112,10 @@ title: connor bell
 
         </div>
     </section>
+
+    <div class="container mx-auto px-4">
+        {% include divider.html %}
+    </div>
 
     <!-- Contact -->
     <section class="container mx-auto px-4" id="contact">
