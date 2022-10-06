@@ -21,14 +21,27 @@ title: connor bell
             </h3>
 
             <div id="project-tags" class="flex flex-row justify-center gap-2 flex-wrap">
-                {% for tag in site.data.projectTags %}
+                <!-- Create array of all tags in project cards -->
+                {% assign projectTags = site.data.projects[0].tags %}
+                {% for project in site.data.projects offset:1 %}
 
-                {% if tag.hide !=true %}
-
-                {% assign tagId = "filter-tag-" | append: forloop.index %}
-                {% include index/projectTag.html id=tagId name=tag.name button=true %}
+                <!-- Only add tags to array if the project is not hidden -->
+                {% if project.hide != true %}
+                
+                {% assign projectTags = projectTags | concat: project.tags %}
 
                 {% endif %}
+
+                {% endfor %}
+
+                <!-- Remove all none unique tags -->
+                {% assign projectTags = projectTags | uniq %}
+
+                <!-- Render tag list -->
+                {% for tag in projectTags %}
+
+                {% assign tagId = "filter-tag-" | append: forloop.index %}
+                {% include index/projectTag.html id=tagId name=tag button=true %}
 
                 {% endfor %}
             </div>
