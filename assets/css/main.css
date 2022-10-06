@@ -14,7 +14,7 @@
     }
 
     button.tag {
-        @apply hover:bg-white hover:text-black;
+        @apply hover:bg-white hover:text-black focus:ring;
     }
 
     button.tag.active {
