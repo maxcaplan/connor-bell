@@ -4,30 +4,36 @@ title: connor bell
 ---
 
 <div class="w-full text-white flex flex-col gap-24 mb-24" id="wrapper">
-    <!-- home -->
+    <!-- Home -->
     <section class="w-screen h-screen" id="home">
         <canvas class="w-full h-full" id="home-shader"></canvas>
     </section>
 
     <!-- Projects -->
+
+    <!-- Sets the limit for the number of projects to display -->
+    {% assign projectsLimit = 9 %}
+
     <section class="container mx-auto px-4" id="projects">
         <div class="flex justify-center mb-12">
             <h1 class="text-4xl font-bold border-b border-white inline pb-2">Projects</h1>
         </div>
 
         <!-- Project Tags -->
+        {% if site.data.projects %}
         <div class="flex w-100 flex-col items-center justify-center lg:flex-row gap-6 mb-6">
             <h3 class="font-bold text-xl">Tags:
             </h3>
 
             <!-- List of unique project tags -->
-            {% include index/projectTagList.html projects=site.data.projects %}
+            {% include index/projectTagList.html projects=site.data.projects limit=projectsLimit %}
         </div>
+        {% endif %}
 
 
         <!-- Project Card Grid -->
         <div id="project-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for project in site.data.projects %}
+            {% for project in site.data.projects limit:projectsLimit %}
 
             <!-- Project Card -->
             {% if project.hide != true %}
@@ -43,8 +49,24 @@ title: connor bell
 
             {% endif %}
 
+            {% else %}
+            <!-- Show if there are no projects to display -->
+            <h3 class="text-2xl italic text-neutral-400 text-center w-full">Nothing to see here...</h3>
+
             {% endfor %}
         </div>
+
+        {% if site.data.projects.size > projectsLimit %}
+
+        <div class="w-full flex justify-center mt-6">
+            <a href="/projects.html"
+                class="text-white hover:text-black hover:bg-white border border-white focus:ring font-medium rounded-lg text-2xl px-8 py-3 w-full md:w-auto flex justify-center items-center gap-3 transition-all">
+                <span>See More</span>
+                <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+        </div>
+
+        {% endif %}
     </section>
 
     <!-- About -->
