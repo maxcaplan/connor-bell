@@ -12,5 +12,9 @@ module.exports = {
             extend: {},
         },
     },
-    plugins: []
+    plugins: [],
+    // Disables hover styling on mobile devices
+    future: {
+        hoverOnlyWhenSupported: true,
+    },
 }
