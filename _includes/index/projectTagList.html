@@ -1,0 +1,30 @@
+{% comment %}
+Creates a list of unique tags from an array of projects
+@param projects {array} - An array of project objects
+{% endcomment %}
+
+<div id="project-tags" class="flex flex-row justify-center gap-2 flex-wrap">
+    <!-- Create array of all tags in project cards -->
+    {% assign projectTags = include.projects[0].tags %}
+    {% for project in include.projects offset:1 %}
+
+    <!-- Only add tags to array if the project is not hidden -->
+    {% if project.hide != true %}
+
+    {% assign projectTags = projectTags | concat: project.tags %}
+
+    {% endif %}
+
+    {% endfor %}
+
+    <!-- Remove all none unique tags -->
+    {% assign projectTags = projectTags | uniq %}
+
+    <!-- Render tag list -->
+    {% for tag in projectTags %}
+
+    {% assign tagId = "filter-tag-" | append: forloop.index %}
+    {% include index/projectTag.html id=tagId name=tag button=true %}
+
+    {% endfor %}
+</div>
