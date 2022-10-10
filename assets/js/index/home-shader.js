@@ -5,7 +5,7 @@
  */
 function getTextFromURL(url) {
   return new Promise((res, rej) => {
-    var request = new XMLHttpRequest();
+    const request = new XMLHttpRequest();
     request.open("GET", url);
     request.onreadystatechange = () => {
       if (request.readyState == 4) {
@@ -20,32 +20,22 @@ function getTextFromURL(url) {
   })
 }
 
-async function test() {
-  let text = await getTextFromURL("/assets/shaders/fractal_low.fsh")
-  console.log(text)
-}
-
-const vertexShader = `
-#include <common>
-varying vec2 vUv;
-void main() {
-    vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-}
-`
-
 /**
  * Renders a shader to the home canvas
  */
 async function main() {
-  var targetPos = new THREE.Vector2(0.5, 0.5);
-  var vel = new THREE.Vector2(0.0, 0.0);
-  var pos = new THREE.Vector2(0.5, 0.5);
+  // Init vars
+  let animationFrameId
+  const targetPos = new THREE.Vector2(0.5, 0.5);
+  const vel = new THREE.Vector2(0.0, 0.0);
+  const pos = new THREE.Vector2(0.5, 0.5);
 
+  // Create renderer
   const canvas = document.querySelector('#home-shader');
   const renderer = new THREE.WebGLRenderer({ canvas });
   renderer.autoClearColor = false;
 
+  // Create basic scene elements
   const camera = new THREE.OrthographicCamera(
     -1, // left
     1, // right
@@ -57,8 +47,19 @@ async function main() {
   const scene = new THREE.Scene();
   const plane = new THREE.PlaneBufferGeometry(2, 2);
 
+  // Get Shader data
+  const vertexShader = `
+  #include <common>
+  varying vec2 vUv;
+  void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+  `
   const fragmentShader = await getTextFromURL("/assets/shaders/fractal_low.fsh")
-  var uniforms = {
+
+  // Init shader uniforms
+  const uniforms = {
     iTime: { type: "f", value: 1.0 },
     mouseN: { type: "v2", value: pos },
     mouse: { type: "v2", value: pos },
@@ -67,29 +68,44 @@ async function main() {
     alpha: { type: "f", value: 0.0 }
   };
 
+  // Create shader material
   const material = new THREE.ShaderMaterial({
     vertexShader: vertexShader,
     fragmentShader: fragmentShader,
     uniforms: uniforms,
   });
-  scene.add(new THREE.Mesh(plane, material));
 
+  // Create shader object to render in scene
+  const obj = new THREE.Mesh(plane, material)
+  obj.matrixAutoUpdate = false
+
+  scene.add(obj);
+
+  /** 
+   * Sets the renderer size for the current canvas size 
+   * @param {number} renderer - the Three JS renderer to resize 
+   */
   function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
     const needResize = canvas.width !== width || canvas.height !== height;
     if (needResize) {
+      renderer.setPixelRatio()
       renderer.setSize(width, height, false);
     }
     uniforms.sRatio.value = width / height
-    return needResize;
   }
 
+  /** 
+   * Sets the mouse pos uniforms to the current mouse pos 
+   * @param {number} x - the x position of the mouse
+   * @param {number} y - the y position of the mouse 
+   */
   function updateMouseUniforms(x, y) {
-    var mouse = new THREE.Vector2(x * 3.14, y * 3.14);
+    const mouse = new THREE.Vector2(x * 3.14, y * 3.14);
     uniforms.mouse.value = mouse;
-    var mouseN = new THREE.Vector2(x * 20.0 - 10.0, y * 30. - 15.);
+    const mouseN = new THREE.Vector2(x * 20.0 - 10.0, y * 30. - 15.);
     uniforms.mouseN.value = mouseN;
   }
 
@@ -106,10 +122,38 @@ async function main() {
 
   }
 
+  /** 
+   * Creates an intersection observer for a page element 
+   * @param {HTMLElement} el - the page element to observe 
+   */
+  function createObserver(el) {
+    let observer = new IntersectionObserver(onIntersectionUpdate)
+    observer.observe(el)
+  }
+
+  /** 
+   * Starts or stops the renderer based on canvas visibility 
+   * @param {IntersectionObserverEntry} entries - the page element to observe
+   */
+  function onIntersectionUpdate(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log("start render")
+        startRender()
+      } else {
+        console.log("stop render")
+        stopRender()
+      }
+    })
+  }
+
   // document.addEventListener("touchmove", onDocumentTouchmove, { passive: false });
 
-  updateMouseUniforms(pos.x, pos.y);
-
+  /** 
+   * Main render loop
+   * @param {number} time - the timestamp of the current frame in milliseconds
+   * @param {number} lastTime - the timestamp of the last frame in milliseconds
+   */
   function render(time, lastTime) {
     time *= 0.001;  // convert to seconds
 
@@ -118,12 +162,12 @@ async function main() {
     uniforms.iTime.value = time;
     uniforms.alpha.value = Math.min(1.0, time);
 
-    var tmp = targetPos.clone();
-    var delta = tmp.sub(pos);
-    var length = delta.length();
+    const tmp = targetPos.clone();
+    let delta = tmp.sub(pos);
+    const length = delta.length();
 
     delta = delta.normalize();
-    var d = time - lastTime;
+    const d = time - lastTime;
 
     pos.setX(pos.x + delta.x * length * d * 5);
     pos.setY(pos.y + delta.y * length * d * 5);
@@ -133,10 +177,27 @@ async function main() {
 
     lastTime = time
 
-    requestAnimationFrame(t => render(t, lastTime));
+    animationFrameId = requestAnimationFrame(t => render(t, lastTime));
   }
 
-  requestAnimationFrame(t => render(t, t));
+  /**
+   * Stops the render loop
+   */
+  function stopRender() {
+    cancelAnimationFrame(animationFrameId)
+  }
+
+  /**
+   * Starts the render loop
+   */
+  function startRender() {
+    requestAnimationFrame(t => render(t, t));
+  }
+
+  // Start intersection observer
+  createObserver(document.getElementById("home-shader"))
+  // Set initial mouse position uniforms
+  updateMouseUniforms(pos.x, pos.y);
 }
 
 main();
