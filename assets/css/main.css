@@ -34,16 +34,6 @@
     animation: fadeIn 0.5s linear forwards, fromLeft 0.5s ease-out none;
 }
 
-.fade-in-top {
-    animation: fadeIn 0.5s linear forwards, fromTop 0.5s ease-out none;
-}
-
-.links-fade-in * {
-    opacity: 0;
-    animation: fadeIn 0.5s linear forwards;
-    animation-delay: calc(var(--animation-index) * 0.1s);
-}
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -58,18 +48,6 @@
     0% {
         opacity: 0;
         transform: translateX(-1.5rem);
-    }
-
-    100% {
-        opacity: 100;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fromTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-1.5rem);
     }
 
     100% {
