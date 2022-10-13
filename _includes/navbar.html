@@ -1,6 +1,6 @@
-<nav id="navbar" class="w-full relative px-4 bg-gradient-to-b from-black/50 to-black/0">
+<nav id="navbar" class="w-full relative px-4 bg-gradient-to-b from-black/50 to-black/0 z-50">
     <div class="container mx-auto flex flex-row items-center py-2">
-        <div id="logo">
+        <div id="logo" class="fade-in-top">
             <a class="text-3xl md:text-4xl font-bold" href="/">
                 connor
                 <span class="md:hidden">b.</span>
@@ -8,7 +8,7 @@
             </a>
         </div>
 
-        <div id="links" class="grow hidden md:flex flex-row justify-end">
+        <div id="links" class="grow hidden md:flex flex-row justify-end fade-in opacity-0">
             <div class="flex flex-row gap-4 items-center">
                 <a class="text-xl hover:text-cyan-200 hover:underline" href="/#projects">projects</a>
                 <a class="text-xl hover:text-cyan-200 hover:underline" href="/#about">about</a>
@@ -20,7 +20,9 @@
                 {% for social in site.data.socials %}
 
                 <a class="text-2xl leading-none" href="{{social.link}}" target="_blank">
-                    <ion-icon name="{{social.logo}}"></ion-icon>
+                    <span class="inline-block" style="min-width: 24px; min-height: 24px;">
+                        <ion-icon name="{{social.logo}}"></ion-icon>
+                    </span>
                 </a>
 
                 {% endfor %}
