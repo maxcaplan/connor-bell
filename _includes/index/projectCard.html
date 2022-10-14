@@ -15,8 +15,9 @@ Card component for project information
 <a id="{{projectCardId}}"
     class="border border-white rounded shadow-lg overflow-hidden flex flex-col hover:-translate-y-2 transition-transform fade-on-scroll"
     href="{{include.link}}">
-    <div class="w-full h-full overflow-hidden">
-        <img class="h-full w-auto" src="{{include.head}}" alt="{{include.name}}">
+    <div class="w-full aspect-[16/9] overflow-hidden flex justify-center items-center">
+        <img class="min-h-full min-w-full object-cover shrink-0" src="{{include.head}}" alt="{{include.name}}"
+            loading="lazy" width="16" height="9">
     </div>
 
     <div class="w-full p-4 flex flex-col gap-3">
