@@ -4,6 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+    @font-face {
+        font-family: "JetBrains Mono";
+        src: url("/assets/fonts/JetBrainsMono.woff2");
+        font-weight: 100 800;
+    }
+
+    @font-face {
+        font-family: "JetBrains Mono";
+        src: url("/assets/fonts/JetBrainsMono-Italic.woff2");
+        font-weight: 100 800;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: "Manrope";
+        src: url("/assets/fonts/Manrope.woff2");
+        font-weight: 100 800;
+    }
+}
+
 @layer components {
     .scroll-button {
         @apply flex items-center gap-2 opacity-0 text-neutral-500 hover:text-white transition-colors fade-in;
