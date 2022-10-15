@@ -20,8 +20,8 @@ Card component for project information
             loading="lazy" width="16" height="9">
     </div>
 
-    <div class="w-full p-4 flex flex-col gap-6 grow">
-        <div class="flex items-center">
+    <div class="w-full p-4 flex flex-col grow">
+        <div class="flex shrink items-center">
             <h2 class="text-xl lg:text-2xl font-display font-medium">{{include.name}}</h2>
 
             <div class="grow flex justify-end text-xl lg:text-2xl font-medium">
@@ -29,11 +29,13 @@ Card component for project information
             </div>
         </div>
 
-        <p class="text-neutral-200">{{include.description}}</p>
+        <div class="flex grow py-6">
+            <p class="text-neutral-200">{{include.description}}</p>
+        </div>
 
         {% if include.tags %}
 
-        <div class="grow flex items-end">
+        <div class="shrink">
             <div id="card-tags" class="flex flex-row gap-2">
                 {% for tag in include.tags %}
 
