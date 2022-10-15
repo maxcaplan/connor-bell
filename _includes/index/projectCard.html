@@ -20,16 +20,16 @@ Card component for project information
             loading="lazy" width="16" height="9">
     </div>
 
-    <div class="w-full p-4 flex flex-col gap-3 grow">
+    <div class="w-full p-4 flex flex-col gap-6 grow">
         <div class="flex items-center">
-            <h2 class="text-2xl font-display font-bold">{{include.name}}</h2>
+            <h2 class="text-xl lg:text-2xl font-display font-medium">{{include.name}}</h2>
 
-            <div class="grow flex justify-end text-2xl">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
+            <div class="grow flex justify-end text-xl lg:text-2xl font-medium">
+                ->
             </div>
         </div>
 
-        <p>{{include.description}}</p>
+        <p class="text-neutral-200">{{include.description}}</p>
 
         {% if include.tags %}
 
