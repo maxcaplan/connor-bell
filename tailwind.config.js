@@ -17,7 +17,7 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [require('@tailwindcss/typography')],
     // Disables hover styling on mobile devices
     future: {
         hoverOnlyWhenSupported: true,
