@@ -1,9 +1,11 @@
 #page-content {
+    padding-top: 70.4px;
     padding-bottom: 112.75px;
 }
 
 @media only screen and (min-width: 768px) {
     #page-content {
+        padding-top: 72px;
         padding-bottom: 72.75px;
     }
 }

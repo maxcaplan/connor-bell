@@ -1,0 +1,52 @@
+<!-- Page Metadata -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="author" content="Max Caplan">
+<meta name="description" content="hi! i'm connor.
+i write code and make art
+my code lives on SourceHut and Shadertoy.
+i'm a Sr. Software Developer at Unity. CV.
+i help admin the shader.zone discord.
+i live in the unceded territory of Mi'kma'ki
+say hi@connorbell.ca">
+
+<!-- Open Graph Protocol Metadata https://ogp.me/ -->
+<meta property="og:title" content="connor bell" />
+<meta name="twitter:description" content="hi! i'm connor.
+  i write code and make art
+  my code lives on SourceHut and Shadertoy.
+  i'm a Sr. Software Developer at Unity. CV.
+  i help admin the shader.zone discord.
+  i live in the unceded territory of Mi'kma'ki
+  say hi@connorbell.ca">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ site.url | append: page.url }}" />
+<meta property="og:image" content="{{ site.url | append: "/assets/images/connorbell.jpg" }}" />
+
+<!-- Twitter Cards Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@connrbell">
+<meta name="twitter:creator" content="@connrbell">
+<meta name="twitter:title" content="connor bell">
+<meta name="twitter:description" content="hi! i'm connor.
+  i write code and make art
+  my code lives on SourceHut and Shadertoy.
+  i'm a Sr. Software Developer at Unity. CV.
+  i help admin the shader.zone discord.
+  i live in the unceded territory of Mi'kma'ki
+  say hi@connorbell.ca">
+<meta name="twitter:image" content="{{ site.url | append: "/assets/images/connorbell.jpg" }}">
+
+<!-- Title/Favicon -->
+{% if include.subtitle %}
+
+{% assign subtitle = ' - ' | append: include.subtitle %}
+<title>{{ page.title | append: subtitle }}</title>
+
+{% else %}
+
+<title>{{ page.title }}</title>
+
+{% endif %}
+
+<link rel="icon" href="{{ "assets/images/favicon.ico" | relative_url }}" type="image/x-icon">

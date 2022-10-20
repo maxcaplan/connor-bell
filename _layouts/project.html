@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}" class="scroll-smooth">
+
+<head>
+    {% include metadata.html subtitle='connor bell' %}
+
+    <!-- Page Stylesheets -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/layouts/project.css" | relative_url }}">
+</head>
+
+<body class="relative bg-black text-white">
+    <!-- Navbar -->
+    <div class="absolute top-0 w-full">
+        {% include navbar.html %}
+    </div>
+
+    <!-- Main Page Content -->
+    <div id="page-content" class="container mx-auto p-4 min-h-screen">
+        <div class="py-6">
+            {{ content }}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {% include footer.html %}
+
+    <!-- Ionicons library -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
