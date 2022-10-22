@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: ShaderChain
 
 images:
@@ -24,11 +24,13 @@ images:
 <br>
 ![Shaderchain Screenshot]({{absolute_url}}/assets/images/shaderchain/shaderchain.jpg)
 
-<div class="gallery">
+<div class="grid grid-cols-4 gap-4">
 
 {% for image in page.images %}
 
-  <a href="{{absolute_url}}{{image.path}}.gif" data-lightbox="gifs"><img src="{{absolute_url}}{{image.path}}_sm.gif"> </a>
+  <a href="{{absolute_url}}{{image.path}}.gif" data-lightbox="gifs">
+    <img src="{{absolute_url}}{{image.path}}_sm.gif"> 
+  </a>
 
 {% endfor %}
 

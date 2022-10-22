@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Animation
 images:
   - image_path: /assets/images/moonshadow/1.jpg

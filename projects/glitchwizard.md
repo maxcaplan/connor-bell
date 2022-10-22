@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Animation
 images:
   - image_path: /assets/images/gw/1.JPG
@@ -30,9 +30,7 @@ images:
 
 # Glitch Wizard
 
-<div class="videocontainer">
-<iframe src="https://www.youtube.com/embed/brfIMK-GpmI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen  class="video"></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/brfIMK-GpmI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full aspect-[16/9]"></iframe>
 
 <br>
 
@@ -56,7 +54,7 @@ http://glitchwizard.com
 
 {% for image in page.images %}
 
-  <a href="{{absolute_url}}{{ image.image_path }}" data-lightbox="glitch"><img src="{{absolute_url}}{{ image.image_path }}"> </a>
+  <a href="{{absolute_url}}{{ image.image_path }}" data-lightbox="glitch"><img class="w-full" src="{{absolute_url}}{{ image.image_path }}"> </a>
 
 {% endfor %}
 

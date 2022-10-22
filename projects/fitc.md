@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Animation
+layout: project
+title: FITC
 ---
 
 # FITC Web Unleashed Intro Credits

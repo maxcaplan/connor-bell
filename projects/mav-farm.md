@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Animation
 ---
 
@@ -10,5 +10,5 @@ title: Animation
 ## Filters for .Show
 
 <b><a href="http://lost.show>
-http://lost.show
+http://lost.show">
 </a></b>

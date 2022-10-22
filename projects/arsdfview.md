@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Animation
+layout: project
+title: AR-SDF
 ---
 
 iOS prototype for display and interaction with signed distance fields.

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Animation
 
 images:
@@ -12,12 +12,6 @@ images:
   - image_path: /assets/images/gifs/4.gif
     title:
 ---
-
-<head>
-  <link href="{{absolute_url}}/assets/css/lightbox.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{absolute_url}}/assets/css/gallery.css">
-  <link rel="stylesheet" href="/assets/css/collections.css" />  
-</head>
 
 <div class="gallery">
 
