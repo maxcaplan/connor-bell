@@ -1,0 +1,7 @@
+{% comment %}
+Youtube video player component
+@param url {string} - The embed url for a youtube video
+{% endcomment %}
+<iframe src="{{ include.url }}" title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+    class="w-full aspect-[16/9]"></iframe>
