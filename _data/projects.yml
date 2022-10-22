@@ -30,12 +30,12 @@
     - iOS shaders
   description: App I made with Allan Lavell that distorts images, gifs and videos
 
-- name: Interactive VR Conemarcher
+- name: Angeline - Interactive VR Fractals
   head: assets/images/projects/angeline.jpg
-  link: projects/fitc.html
+  link: projects/angeline.html
   tags:
-    - Unity shaders
-  description: Intro Titles collab with Cale Bradbury
+    - shaders
+  description: Interactive VR world built with a custom conemarching rendering algorithm.
 
 - name: FITC Web Unleashed Intro Credits
   head: assets/images/projects/fitc.png
