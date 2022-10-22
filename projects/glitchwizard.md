@@ -22,21 +22,11 @@ images:
     title:
 ---
 
-<head>
-  <link rel="stylesheet" href="{{absolute_url}}/assets/css/video.css">
-  <link rel="stylesheet" href="{{absolute_url}}/assets/css/gallery.css">
-  <link href="{{absolute_url}}/assets/css/lightbox.min.css" rel="stylesheet" />
-</head>
-
 # Glitch Wizard
 
-<iframe src="https://www.youtube.com/embed/brfIMK-GpmI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full aspect-[16/9]"></iframe>
+{% include ytVideo.html url="https://www.youtube.com/embed/brfIMK-GpmI" %}
 
-<br>
-
-<b><a href="http://glitchwizard.com">
-http://glitchwizard.com
-</a></b>
+[http://glitchwizard.com](http://glitchwizard.com)
 
 **Created with** [Allan Lavell](http://lavell.xyz)
 
@@ -60,4 +50,3 @@ http://glitchwizard.com
 
 </div>
 
-<script src="{{absolute_url}}/assets/js/lightbox-plus-jquery.min.js"></script>
