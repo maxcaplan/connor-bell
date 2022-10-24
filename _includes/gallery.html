@@ -1,0 +1,82 @@
+{% comment %}
+Image gallery component
+@param path {string} - relative path to static assets to be displayed
+@param id {string} - a unique identifier to differentiate galleries
+{% endcomment %}
+<div class="lightbox-gallery">
+    <!-- Image Gallery -->
+    <div class="lightbox-gallery-gallery grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 not-prose">
+        {% assign thumbIndex = 0 %}
+
+        {% for file in site.static_files %}
+        {% if file.path contains include.path %}
+        {% unless file.basename contains "-thumb" %}
+
+        <!-- Get path to images thumbnail -->
+        {% assign thumbName = file.basename | append: "-thumb" | append: file.extname %}
+        {% assign thumbPath = file.path | remove: file.name | append: thumbName %}
+
+        <a href="{{ file.path }}" data-thumb-index="{{ thumbIndex }}"
+            class="lightbox-gallery-item w-full aspect-square overflow-hidden flex justify-center items-center">
+            <img src="{{ thumbPath }}" alt="{{ file.basename }}" loading="lazy" width="200" height="200"
+                class="min-h-full min-w-full object-cover shrink-0 rounded">
+        </a>
+
+        {% assign thumbIndex = thumbIndex | plus: 1 %}
+
+        {% endunless %}
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- Lightbox -->
+    <div data-active-slide-index="0"
+        class="lightbox-gallery-lightbox fixed top-0 left-0 z-50 w-screen h-screen bg-black/75 not-prose hidden">
+        <div class="w-full h-full flex flex-col">
+            <div class="flex justify-end">
+                <button
+                    class="lightbox-gallery-close flex p-4 md:p-6 text-neutral-400 hover:text-white transition-colors">
+                    <ion-icon name="close" class="text-4xl leading-none"></ion-icon>
+                </button>
+            </div>
+
+            <div class="flex-1 relative">
+                <div class="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center">
+                    <div class="lightbox-gallery-lightbox-content w-full max-w-7xl max-h-full pb-4 md:pb-6 flex flex-row">
+                        <div class="shrink">
+                            <button
+                                class="lightbox-gallery-prev h-full px-4 md:px-6 flex items-center text-neutral-400 hover:text-white transition-colors">
+                                <ion-icon name="chevron-back" class="text-xl md:text-4xl"></ion-icon>
+                            </button>
+                        </div>
+
+                        <div class="grow">
+                            {% assign slideIndex = 0 %}
+
+                            {% for file in site.static_files %}
+                            {% if file.path contains include.path %}
+                            {% unless file.basename contains "-thumb" %}
+
+                            <img src="{{ file.path }}" alt="{{ file.basename }}" loading="lazy" width="200" height="200"
+                                data-slide-index="{{ slideIndex }}"
+                                class="lightbox-gallery-slide w-full max-h-full object-contain">
+
+                            {% assign slideIndex = slideIndex | plus: 1 %}
+
+                            {% endunless %}
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+
+                        <div class="shrink">
+                            <button
+                                class="lightbox-gallery-next h-full px-4 md:px-6 flex items-center text-neutral-400 hover:text-white transition-colors">
+                                <ion-icon name="chevron-forward" class="text-xl md:text-4xl"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
