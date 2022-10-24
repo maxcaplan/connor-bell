@@ -65,6 +65,7 @@
   tags:
     - web shaders
   description: Raymarched fractal I used to host on my website landing page
+  hide: true
 
 - name: Physarum-Simulations
   head: assets/images/projects/physarum.png
