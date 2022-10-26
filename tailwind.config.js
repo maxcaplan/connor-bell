@@ -14,7 +14,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 'sans': ['Manrope', ...defaultTheme.fontFamily.sans],
-                'display': ['JetBrains Mono', ...defaultTheme.fontFamily.sans],
+                'display': ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
             },
 
             // tailwind typography theme
