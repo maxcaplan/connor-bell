@@ -128,34 +128,43 @@ title: connor bell
         </div>
 
         <!-- Contact -->
-        <section class="w-full pt-16" id="contact">
-            <div class="flex justify-center mb-12">
-                <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">Contact</h1>
-            </div>
-
+        <section id="contact" class="w-full pt-16">
             <div class="flex flex-col gap-12">
-                <h1 class="leading-none text-3xl md:text-4xl text-center font-display align-center">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    hi@connorbell.ca
-                </h1>
-
                 <div class="flex justify-center">
-                    <div class="flex flex-col md:flex-row gap-12">
-                        {% for social in site.data.socials %}
-
-                        <a class="flex flex-row md:flex-col justify-center align-center gap-4 leading-none font-display"
-                            href="{{social.link}}" target="_blank">
-
-                            <ion-icon class="text-4xl md:mx-auto" name="{{social.logo}}"></ion-icon>
-                            <span class="text-2xl">
-                                {{ social.name | downcase }}</span>
-
-                        </a>
-
-                        {% endfor %}
-                    </div>
+                    <h1 class="inline text-4xl font-display font-bold border-b border-white pb-2">Contact</h1>
                 </div>
 
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-[auto, 1fr] gap-6 max-w-fit">
+                        <div
+                            class="md:col-span-3 flex justify-center items-center gap-3 border border-neutral-500 py-4 px-8 rounded select-all hover:bg-neutral-900 transition-colors">
+                            <ion-icon class="text-2xl" name="mail-outline"></ion-icon>
+
+                            <h2 class="text-lg md:text-2xl font-display font-medium">hi@connorbell.ca</h2>
+                        </div>
+
+                        <a class="flex flex-row md:flex-col justify-center items-center gap-3 border border-neutral-500 py-4 px-4 md:p-8 md:aspect-square rounded hover:bg-neutral-900 hover:text-cyan-100 hover:border-cyan-100 transition-colors"
+                            href="https://twitter.com/connrbell" target="_blank">
+
+                            <ion-icon class="text-2xl md:text-4xl" name="logo-twitter"></ion-icon>
+                            <span class="text-lg font-display font-medium">twitter</span>
+                        </a>
+
+                        <a class="flex flex-row md:flex-col justify-center items-center gap-3 border border-neutral-500 py-4 px-4 md:p-8 md:aspect-square rounded hover:bg-neutral-900 hover:text-red-100 hover:border-red-100 transition-colors"
+                            href="https://instagram.com/connrbell" target="_blank">
+
+                            <ion-icon class="text-2xl md:text-4xl" name="logo-instagram"></ion-icon>
+                            <span class="text-lg font-display font-medium">instagram</span>
+                        </a>
+
+                        <a class="flex flex-row md:flex-col justify-center items-center gap-3 border border-neutral-500 py-4 px-4 md:p-8 md:aspect-square rounded hover:bg-neutral-900 hover:text-blue-100 hover:border-blue-100 transition-colors"
+                            href="https://linkedin.com/connorbell" target="_blank">
+
+                            <ion-icon class="text-2xl md:text-4xl" name="logo-linkedin"></ion-icon>
+                            <span class="text-lg font-display font-medium">linkedin</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
