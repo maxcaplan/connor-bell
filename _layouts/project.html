@@ -4,6 +4,11 @@
 <head>
     {% include metadata.html subtitle='connor bell' %}
 
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/JetBrainsMono.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/JetBrainsMono-Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Manrope.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Page Stylesheets -->
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/layouts/project.css" | relative_url }}">
@@ -17,8 +22,7 @@
 
     <!-- Main Page Content -->
     <div id="page-content" class="md:container mx-auto flex justify-center p-4 min-h-screen">
-        <article
-            class="py-6 w-full md:max-w-3xl prose prose-invert">
+        <article class="py-6 w-full md:max-w-3xl prose prose-invert">
             {{ content }}
         </article>
     </div>
