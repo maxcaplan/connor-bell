@@ -50,6 +50,10 @@
     button.tag.active {
         @apply hover:bg-slate-300 hover:text-slate-900;
     }
+
+    .project-card:hover .project-card-icon {
+        @apply translate-x-1 transition-transform ease-in;
+    }
 }
 
 html {

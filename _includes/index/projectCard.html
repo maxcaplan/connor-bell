@@ -13,7 +13,7 @@ Card component for project information
 {% endif %}
 
 <a id="{{projectCardId}}"
-    class="border border-neutral-500 rounded shadow-lg overflow-hidden flex flex-col hover:-translate-y-2 transition-transform fade-on-scroll"
+    class="project-card border border-neutral-500 rounded shadow-lg overflow-hidden flex flex-col hover:bg-neutral-900 transition-colors fade-on-scroll"
     href="{{include.link}}">
     <div class="w-full aspect-[16/9] overflow-hidden flex justify-center items-center">
         <img class="min-h-full min-w-full object-cover shrink-0" src="{{include.head}}" alt="{{include.name}}"
@@ -25,7 +25,7 @@ Card component for project information
             <h2 class="text-xl lg:text-2xl font-display font-medium">{{include.name}}</h2>
 
             <div class="grow flex justify-end text-xl lg:text-2xl font-medium">
-                ->
+                <ion-icon class="project-card-icon" name="arrow-forward-sharp"></ion-icon>
             </div>
         </div>
 
