@@ -1,7 +1,22 @@
 {% comment %}
 Youtube video player component
-@param url {string} - The embed url for a youtube video
+@param id {string} - The id for the youtube video to embed
+@param title {string} - The title of the video
 {% endcomment %}
-<iframe src="{{ include.url }}" title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-    class="w-full aspect-[16/9]"></iframe>
+
+{% capture thumbnail %}
+background-image: -webkit-image-set(
+    url('https://i.ytimg.com/vi/{{ include.id }}/hqdefault.jpg') 1x,
+    url('https://i.ytimg.com/vi/{{ include.id }}/maxresdefault.jpg') 2x);
+background-image: image-set(
+    url('https://i.ytimg.com/vi/{{ include.id }}/hqdefault.jpg') 1x,
+    url('https://i.ytimg.com/vi/{{ include.id }}/maxresdefault.jpg') 2x);
+{% endcapture %}
+
+{% assign videoUrl = "https://youtube.com/watch?v=" | append: include.id %}
+
+<lite-youtube videoid="{{ include.id }}" style="{{ thumbnail }}" class="w-full max-w-7xl aspect-[16/9] rounded">
+    <a href="{{ videoUrl }}" class="lty-playbtn" title="Play Video">
+        <span class="lyt-visually-hidden">Play Video: {{ include.title }}</span>
+    </a>
+</lite-youtube>

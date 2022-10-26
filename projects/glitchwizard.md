@@ -3,9 +3,13 @@ layout: project
 title: Glitch Wizard
 ---
 
+<head>
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css">
+</head>
+
 # Glitch Wizard
 
-{% include ytVideo.html url="https://www.youtube.com/embed/brfIMK-GpmI" %}
+{% include ytVideo.html id="brfIMK-GpmI" title="Glitch Wizard Launch Trailer" %}
 
 [http://glitchwizard.com](http://glitchwizard.com)
 
@@ -24,3 +28,4 @@ title: Glitch Wizard
 {% include gallery.html path="/assets/images/gw/gallery" %}
 
 <script src="/assets/js/lightbox-gallery.js"></script>
+<script src="/assets/js/lite-yt-embed.js"></script>

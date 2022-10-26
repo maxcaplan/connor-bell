@@ -3,13 +3,17 @@ layout: project
 title: Angeline
 ---
 
+<head>
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css">
+</head>
+
 # Angeline: A VR Space
 
-{% include ytVideo.html url="https://www.youtube.com/embed/VXqM88Vo-NM" %}
+{% include ytVideo.html id="VXqM88Vo-NM" title="Angeline - A VR space by Connor Bell" %}
 
 Angeline is an interactive VR fractal zone made in Unity with a technique called Conemarching to efficiently render the implicit surfaces stereographically. 
 
-<iframe frameborder="0" src="https://itch.io/embed/711093?bg_color=000000&fg_color=eecefa&link_color=a75bfa&border_color=ffffff" width="552" height="167" class="max-w-full"><a href="https://connorbell.itch.io/angeline">Angeline by connor bell</a></iframe>
+<iframe frameborder="0" src="https://itch.io/embed/711093?bg_color=000000&fg_color=eecefa&link_color=a75bfa&border_color=737373" width="552" height="167" class="max-w-full"><a href="https://connorbell.itch.io/angeline">Angeline by connor bell</a></iframe>
 
 <p></p>
 
@@ -34,3 +38,4 @@ Angeline is an interactive VR fractal zone made in Unity with a technique called
 ![Angeline A VR Space](/assets/images/angeline/angeline.gif)
 
 <script src="/assets/js/lightbox-gallery.js"></script>
+<script src="/assets/js/lite-yt-embed.js"></script>
