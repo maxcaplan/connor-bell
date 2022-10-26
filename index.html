@@ -22,140 +22,143 @@ title: connor bell
     <!-- Sets the limit for the number of projects to display -->
     {% assign projectsLimit = 12 %}
 
-    <section class="container mx-auto px-4 py-16" id="projects">
-        <div class="flex justify-center mb-12">
-            <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">Projects</h1>
-        </div>
+    <div class="container max-w-7xl mx-auto px-4">
+        <section class="w-full py-16" id="projects">
+            <div class="flex justify-center mb-12">
+                <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">Projects</h1>
+            </div>
 
-        <!-- Project Tags -->
-        {% if site.data.projects %}
-        <div class="flex w-100 flex-col items-center justify-center lg:flex-row gap-6 mb-6">
-            <h3 class="font-bold font-display text-xl">Tags:
-            </h3>
+            <!-- Project Tags -->
+            {% if site.data.projects %}
+            <div class="flex w-100 flex-col items-center justify-center lg:flex-row gap-6 mb-6">
+                <h3 class="font-bold font-display text-xl">Tags:
+                </h3>
 
-            <!-- List of unique project tags -->
-            {% include index/projectTagList.html projects=site.data.projects limit=projectsLimit %}
-        </div>
-        {% endif %}
-
-
-        <!-- Project Card Grid -->
-        <div id="project-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for project in site.data.projects limit:projectsLimit %}
-
-            <!-- Project Card -->
-            {% if project.hide != true %}
-
-            {% include index/projectCard.html
-            id=forloop.index
-            name=project.name
-            head=project.head
-            link=project.link
-            tags=project.tags
-            description=project.description
-            %}
-
+                <!-- List of unique project tags -->
+                {% include index/projectTagList.html projects=site.data.projects limit=projectsLimit %}
+            </div>
             {% endif %}
 
-            {% else %}
-            <!-- Show if there are no projects to display -->
-            <h3 class="text-2xl font-display italic text-neutral-400 text-center w-full">Nothing to see here...</h3>
 
-            {% endfor %}
-        </div>
+            <!-- Project Card Grid -->
+            <div id="project-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for project in site.data.projects limit:projectsLimit %}
 
-        {% if site.data.projects.size > projectsLimit %}
+                <!-- Project Card -->
+                {% if project.hide != true %}
 
-        <div class="w-full flex justify-center mt-6">
-            <a href="/projects.html"
-                class="text-white hover:text-black hover:bg-white border border-white focus:ring font-medium rounded-lg text-2xl px-8 py-3 w-full md:w-auto flex justify-center items-center gap-3 transition-all">
-                <span>See More</span>
-                <ion-icon name="arrow-forward"></ion-icon>
-            </a>
-        </div>
+                {% include index/projectCard.html
+                id=forloop.index
+                name=project.name
+                head=project.head
+                link=project.link
+                tags=project.tags
+                description=project.description
+                %}
 
-        {% endif %}
-    </section>
+                {% endif %}
 
-    <div class="container mx-auto px-4">
-        {% include divider.html %}
-    </div>
+                {% else %}
+                <!-- Show if there are no projects to display -->
+                <h3 class="text-2xl font-display italic text-neutral-400 text-center w-full">Nothing to see here...</h3>
 
-    <!-- About -->
-    <section class="container mx-auto px-4 py-16" id="about">
-        <div class="flex flex-col md:flex-row gap-12">
-            <div class="flex justify-center md:justify-start md:block md:grow">
-                <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">About</h1>
+                {% endfor %}
             </div>
 
-            <div class="flex justify-center md:justify-end md:flex-shrink md:order-last">
-                <div class="max-w-full w-48 md:w-64 lg:w-80 overflow-hidden">
-                    <img alt="Connor Bell" class="w-full h-auto inline rounded-full" src="assets/images/connorbell.jpg">
+            {% if site.data.projects.size > projectsLimit %}
+
+            <div class="w-full flex justify-center mt-6">
+                <a href="/projects.html"
+                    class="text-white hover:text-black hover:bg-white border border-white focus:ring font-medium rounded-lg text-2xl px-8 py-3 w-full md:w-auto flex justify-center items-center gap-3 transition-all">
+                    <span>See More</span>
+                    <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+            </div>
+
+            {% endif %}
+        </section>
+
+        <div class="w-full">
+            {% include divider.html %}
+        </div>
+
+        <!-- About -->
+        <section class="w-full py-16" id="about">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="flex justify-center md:justify-start md:block md:grow">
+                    <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">About</h1>
                 </div>
-            </div>
 
-            <div class="md:grow flex justify-center md:justify-start">
-                <p class="tracking-wide inline text-base md:text-lg leading-loose md:leading-loose">
-                    hi! i'm connor.
-                    <br>
-                    i write code and make art.
-                    <br>
-                    my code lives on
-                    <a class="underline hover:text-cyan-200" href="https://git.sr.ht/~connorbell/">SourceHut</a>
-                    and
-                    <a class="underline hover:text-cyan-200" href="https://shadertoy.com">Shadertoy</a>.<br>
-                    i'm a Sr. Software Developer at Unity. CV.
-                    <br>
-                    i help admin the
-                    <a class="underline hover:text-cyan-200" href="https://shader.zone">shader.zone</a>
-                    discord.
-                    <br>
-                    i live in the unceded territory of Mi'kma'ki.
-                    <br>
-                    say hi@connorbell.ca
-                    <br>
-                </p>
-            </div>
-
-
-        </div>
-    </section>
-
-    <div class="container mx-auto px-4">
-        {% include divider.html %}
-    </div>
-
-    <!-- Contact -->
-    <section class="container mx-auto px-4 pt-16" id="contact">
-        <div class="flex justify-center mb-12">
-            <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">Contact</h1>
-        </div>
-
-        <div class="flex flex-col gap-12">
-            <h1 class="leading-none text-3xl md:text-4xl text-center font-display align-center">
-                <ion-icon name="mail-outline"></ion-icon>
-                hi@connorbell.ca
-            </h1>
-
-            <div class="flex justify-center">
-                <div class="flex flex-col md:flex-row gap-12">
-                    {% for social in site.data.socials %}
-
-                    <a class="flex flex-row md:flex-col justify-center align-center gap-4 leading-none font-display"
-                        href="{{social.link}}" target="_blank">
-
-                        <ion-icon class="text-4xl md:mx-auto" name="{{social.logo}}"></ion-icon>
-                        <span class="text-2xl">
-                            {{ social.name | downcase }}</span>
-
-                    </a>
-
-                    {% endfor %}
+                <div class="flex justify-center md:justify-end md:flex-shrink md:order-last">
+                    <div class="max-w-full w-48 md:w-64 lg:w-80 overflow-hidden">
+                        <img alt="Connor Bell" class="w-full h-auto inline rounded-full"
+                            src="assets/images/connorbell.jpg">
+                    </div>
                 </div>
+
+                <div class="md:grow flex justify-center md:justify-start">
+                    <p class="tracking-wide inline text-base md:text-lg leading-loose md:leading-loose">
+                        hi! i'm connor.
+                        <br>
+                        i write code and make art.
+                        <br>
+                        my code lives on
+                        <a class="underline hover:text-cyan-200" href="https://git.sr.ht/~connorbell/">SourceHut</a>
+                        and
+                        <a class="underline hover:text-cyan-200" href="https://shadertoy.com">Shadertoy</a>.<br>
+                        i'm a Sr. Software Developer at Unity. CV.
+                        <br>
+                        i help admin the
+                        <a class="underline hover:text-cyan-200" href="https://shader.zone">shader.zone</a>
+                        discord.
+                        <br>
+                        i live in the unceded territory of Mi'kma'ki.
+                        <br>
+                        say hi@connorbell.ca
+                        <br>
+                    </p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <div class="w-full">
+            {% include divider.html %}
+        </div>
+
+        <!-- Contact -->
+        <section class="w-full pt-16" id="contact">
+            <div class="flex justify-center mb-12">
+                <h1 class="text-4xl font-display font-bold border-b border-white inline pb-2">Contact</h1>
             </div>
 
-        </div>
-    </section>
+            <div class="flex flex-col gap-12">
+                <h1 class="leading-none text-3xl md:text-4xl text-center font-display align-center">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    hi@connorbell.ca
+                </h1>
+
+                <div class="flex justify-center">
+                    <div class="flex flex-col md:flex-row gap-12">
+                        {% for social in site.data.socials %}
+
+                        <a class="flex flex-row md:flex-col justify-center align-center gap-4 leading-none font-display"
+                            href="{{social.link}}" target="_blank">
+
+                            <ion-icon class="text-4xl md:mx-auto" name="{{social.logo}}"></ion-icon>
+                            <span class="text-2xl">
+                                {{ social.name | downcase }}</span>
+
+                        </a>
+
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
 </div>
 
 <!-- Load Scripts -->
