@@ -5,13 +5,11 @@ const galleriesMap = galleries.reduce((result, el) => {
     const gallery = el.querySelector(".lightbox-gallery-gallery")
     const lightbox = el.querySelector(".lightbox-gallery-lightbox")
 
-    // Check that the gallery has all required elements
-    if (gallery === null) {
-        console.error(`Lightbox gallery ${el} does not have a "lightbox-gallery-gallery" element`)
-        return
-    }
-    if (lightbox === null) {
-        console.error(`Lightbox gallery ${el} does not have a "lightbox-gallery-lightbox" element`)
+    // Skip if gallery doesn't have all required elements
+    if (gallery === null || lightbox === null) {
+        if (gallery === null) console.error(`Lightbox gallery ${el} does not have a "lightbox-gallery-gallery" element`)
+        if (lightbox === null) console.error(`Lightbox gallery ${el} does not have a "lightbox-gallery-lightbox" element`)
+
         return
     }
 
@@ -19,47 +17,60 @@ const galleriesMap = galleries.reduce((result, el) => {
     return result
 }, [])
 
+// Add event listeners
 galleriesMap.forEach(el => {
-    // Add event listeners to all gallery items
-    const galleryItems = el.gallery.querySelectorAll(".lightbox-gallery-item")
-    galleryItems.forEach(item => {
-        item.addEventListener('click', e => galleryItemClick(e, item, el.lightbox))
-    })
-
-    // Add event listener to close button
-    const lightboxCloseButton = el.lightbox.querySelector(".lightbox-gallery-close")
-    lightboxCloseButton.addEventListener('click', e => { closeLightbox(el.lightbox) })
-
-    // Add event listener to nav buttons
-    const lightboxPrevButton = el.lightbox.querySelector(".lightbox-gallery-prev")
-    lightboxPrevButton.addEventListener('click', e => { prevLightboxSlide(el.lightbox) })
-    const lightboxNextButton = el.lightbox.querySelector(".lightbox-gallery-next")
-    lightboxNextButton.addEventListener('click', e => { nextLightboxSlide(el.lightbox) })
-
+    // Add click listener to gallery
+    el.gallery.addEventListener('click', e => handleGalleryClick(e, el.lightbox))
+    // Add click listener to lightbox
     el.lightbox.addEventListener('click', e => { handleLightboxClick(e, el.lightbox) }, false)
 })
 
 /**
- * Handles the click event for gallery items
+ * Handles the click event for a gallery
  * @param {MouseEvent} e - a click event
- * @param {Element} el - the html element that the original event was called from
- * @param {Element} lightbox - the lightbox element to display the image
+ * @param {Element} lightbox - the lightbox element associated to this gallery
  */
-function galleryItemClick(e, el, lightbox) {
+function handleGalleryClick(e, lightbox) {
     e.preventDefault()
-    setLightboxSlide(lightbox, Number(el.dataset.thumbIndex))
-    openLightbox(lightbox)
+
+    // If a thumbnail is clicked, open corresponding image in lightbox
+    const galleryItem = e.target.closest(".lightbox-gallery-item")
+
+    if (galleryItem && galleryItem.dataset.thumbIndex != undefined) {
+        setLightboxSlide(lightbox, Number(galleryItem.dataset.thumbIndex))
+        openLightbox(lightbox)
+    }
 }
 
 /**
- * Handles the click event for the lightbox
+ * Handles the click event for a lightbox
  * @param {MouseEvent} e - a click event
  * @param {Element} lightbox - the lightbox element to handle the click for
  */
 function handleLightboxClick(e, lightbox) {
+    // Close button
+    if (e.target.closest(".lightbox-gallery-close")) {
+        closeLightbox(lightbox)
+        return
+    }
+
+    // Prev nav button
+    if (e.target.closest(".lightbox-gallery-prev")) {
+        prevLightboxSlide(lightbox)
+        return
+    }
+
+    // Next nav button
+    if (e.target.closest(".lightbox-gallery-next")) {
+        nextLightboxSlide(lightbox)
+        return
+    }
+
     // Close lightbox if clicked outside of content
     if (!e.target.closest(".lightbox-gallery-lightbox-content")) {
         closeLightbox(lightbox)
+        console.log("outside")
+        return
     }
 }
 
