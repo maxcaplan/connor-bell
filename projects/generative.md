@@ -1,44 +1,26 @@
 ---
 layout: project
 title: Animation
-
-images:
-  - image_path: /assets/images/gifs/1.gif
-    title:
-  - image_path: /assets/images/gifs/2.gif
-    title:
-  - image_path: /assets/images/gifs/3.gif
-    title:
-  - image_path: /assets/images/gifs/4.gif
-    title:
 ---
 
-<div class="gallery">
+<head>
+<link rel="stylesheet" href="/assets/css/lite-yt-embed.css">
+</head>
 
-{% for image in page.images %}
+# Generative Art
 
-  <a href="{{absolute_url}}{{ image.image_path }}" data-lightbox="gifs"><img src="{{absolute_url}}{{ image.image_path }}"> </a>
+![Banner]({{absolute_url}}/assets/images/gifs/banner.png)
 
-{% endfor %}
+{% include gallery.html path="/assets/images/gifs/gallery" size="md" %}
 
-</div>
+Update June 2021: I’ve started posting sketches on [https://shaders.connorbell.ca](https://shaders.connorbell.ca). These interactive WebGL shaders are automatically deployed from my software, ShaderChain.
 
-I've been making shader gifs since 2016-ish.
+I regularly create code sketches to learn new ideas, inspire larger concepts and to document my process. I’ve made over 400 since 2015 using a technique called [raymarching](http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/) to render signed distance fields. This allows flexibility beyond the regular constraints of 3d models and opens up possibilities to render complex fractals, infinite lattices, etc.
 
-They typically involve raymarching Signed Distance Fields (SDFs).
+### View [Instagram](http://instagram.com/connrbell) • [Tumblr](http://connorbell.tumblr.com/)
 
-<div class="gallery">
+### VJ Loop Packs [2019](https://drive.google.com/open?id=1cP5cYrRY_LGzbqHQ4OpWewOu_myBCMjF)
 
-{% for member in site.data.collections %}
+### Language GLSL
 
-
-<a href="{{absolute_url}}/{{member.link}}">
-  {{member.name}}
-  <img src="{{absolute_url}}/{{member.head}}" />
-</a>
-
-{% endfor %}
-
-</div>
-
-<script src="{{absolute_url}}/assets/js/lightbox-plus-jquery.min.js"></script>
+<script src="/assets/js/lightbox-gallery.js"></script>
