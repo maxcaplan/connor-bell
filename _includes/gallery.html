@@ -1,11 +1,25 @@
 {% comment %}
 Image gallery component
 @param path {string} - relative path to static assets to be displayed
-@param id {string} - a unique identifier to differentiate galleries
+@param [size] {string} - determins the number of cols at different breakpoints (options: sm, md)
 {% endcomment %}
+
+{% capture galleryCols %}
+{% case include.size %}
+{% when "sm" %}
+grid-cols-3
+{% when "md" %}
+grid-cols-3 sm:grid-cols-4
+{% else %}
+grid-cols-3 sm:grid-cols-4 md:grid-cols-5
+{% endcase %}
+{% endcapture %}
+
+{% assign galleryClass = "lightbox-gallery-gallery grid" | append: galleryCols | append: "gap-4 not-prose" %}
+
 <div class="lightbox-gallery">
     <!-- Image Gallery -->
-    <div class="lightbox-gallery-gallery grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 not-prose">
+    <div class="{{ galleryClass }}">
         {% assign thumbIndex = 0 %}
 
         {% for file in site.static_files %}
