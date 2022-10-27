@@ -22,7 +22,9 @@ galleriesMap.forEach(el => {
     // Add click listener to gallery
     el.gallery.addEventListener('click', e => handleGalleryClick(e, el.lightbox))
     // Add click listener to lightbox
-    el.lightbox.addEventListener('click', e => { handleLightboxClick(e, el.lightbox) }, false)
+    el.lightbox.addEventListener('click', e => handleLightboxClick(e, el.lightbox), false)
+    // Add keyboard listener to lightbox
+    document.addEventListener('keydown', e => handleLightboxKeydown(e, el.lightbox))
 })
 
 /**
@@ -69,8 +71,27 @@ function handleLightboxClick(e, lightbox) {
     // Close lightbox if clicked outside of content
     if (!e.target.closest(".lightbox-gallery-lightbox-content")) {
         closeLightbox(lightbox)
-        console.log("outside")
         return
+    }
+}
+
+/**
+ * Handles the keydown event for a lightbox
+ * @param {KeyboardEvent} e - a keyboard event 
+ * @param {*} lightbox - the lightbox element to handle the keydown for
+ */
+function handleLightboxKeydown(e, lightbox) {
+    // Prev slide nav
+    if (e.code === 'ArrowLeft') {
+        prevLightboxSlide(lightbox)
+    }
+    // Next slide nav
+    if (e.code === 'ArrowRight') {
+        nextLightboxSlide(lightbox)
+    }
+    // Close lightbox
+    if (e.code === 'Escape') {
+        closeLightbox(lightbox)
     }
 }
 
