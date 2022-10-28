@@ -1,0 +1,18 @@
+{%- comment -%}
+Component that replicates gif behaviour with video content
+@param [id] {string} - an id for the video element
+@param [class] {string} - class(es) to apply to the video component
+@param [webm] {string} - path to a webm video file
+@param [mp4] {string} - path to a mp4 video file. Fallback for webm video if webm is provided
+{%- endcomment -%}
+<video autoplay loop muted playsinline preload="none" id="{{ include.id }}" class="{{ include.class }}">
+
+    {% if include.webm %}
+    <source data-src="{{ include.webm }}" type="video/webm">
+    {% endif %}
+
+    {% if include.mp4 %}
+    <source data-src="{{ include.mp4 }}" type="video/mp4">
+    {% endif %}
+
+</video>
