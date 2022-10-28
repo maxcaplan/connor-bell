@@ -8,7 +8,7 @@ title: ShaderChain
 
 ![Shaderchain Screenshot]({{absolute_url}}/assets/images/shaderchain/shaderchain.jpg)
 
-{% include gallery.html path="/assets/images/shaderchain/gallery" %}
+{% include gallery.html path="/assets/images/shaderchain/gallery" size="md" %}
 
 ### Features
 * Build a shader stack with each rendered texture input to the next pass
@@ -28,7 +28,7 @@ title: ShaderChain
 ### Download
 Compile and contribute at the [repo](https://git.sr.ht/~connorbell/ShaderChain)  
 
-<iframe src="https://itch.io/embed/682991" width="552" height="167" frameborder="0"><a href="https://connorbell.itch.io/shaderchain">ShaderChain by connorbell</a></iframe>
+<iframe src="https://itch.io/embed/682991?bg_color=000000&fg_color=eecefa&link_color=a75bfa&border_color=737373" width="552" height="167" frameborder="0"><a href="https://connorbell.itch.io/shaderchain">ShaderChain by connorbell</a></iframe>
 
 ### Donations
 
