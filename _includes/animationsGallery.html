@@ -1,0 +1,45 @@
+{%- comment -%}
+Gallery component for animation collections
+{%- endcomment -%}
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 not-prose">
+    {% for collection in site.data.collections %}
+
+    <a href="{{ collection.link }}"
+        class="group relative w-full flex flex-col overflow-hidden border border-neutral-500 rounded hover:bg-neutral-900">
+        <div class="aspect-square overflow-hidden flex justify-center items-center">
+            {%- comment -%}Video gif thumbnail{%- endcomment -%}
+            {% if collection.head contains ".webm" or collection.head contains ".mp4" %}
+
+            {%- comment -%}Get video links{%- endcomment -%}
+            {% if collection.head contains ".webm" %}
+            {% assign webmPath = collection.head %}
+            {% assign mp4Path = collection.head | replace: '.webm', '.mp4' %}
+            {% else %}
+            {% assign webmPath = collection.head | replace: '.mp4', '.webm' %}
+            {% assign mp4Path = collection.head %}
+            {% endif %}
+
+            {% include videoGif.html
+            class="min-h-full min-w-full object-cover shrink-0 group-hover:scale-110 transition-transform ease-out
+            duration-200"
+            webm=webmPath
+            mp4=mp4Path
+            lazy=true %}
+
+            {%- comment -%}Image thumbnail{%- endcomment -%}
+            {% else %}
+
+            <img src="{{ collection.head }}" alt="{{ collection.name }}" loading="lazy" width="200" height="200"
+                class="min-h-full min-w-full object-cover shrink-0 group-hover:scale-110 transition-transform ease-out duration-200">
+
+            {% endif %}
+        </div>
+
+        <div class="p-2">
+            <p class="truncate font-display font-bold">{{ collection.name }}</p>
+            <p class="text-xs text-neutral-400 font-display">{{ collection.date }}</p>
+        </div>
+    </a>
+
+    {% endfor %}
+</div>
