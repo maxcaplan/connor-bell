@@ -20,7 +20,7 @@ Card component for project information
         {%- comment -%}Image content head{%- endcomment -%}
         {% unless include.head contains ".webm" %}
 
-        <img class="min-h-full min-w-full object-cover shrink-0 group-hover:scale-110 transition-transform ease-out duration-200"
+        <img class="min-h-full min-w-full object-cover shrink-0 group-hover:scale-105 transition-transform ease-out duration-200"
             src="{{include.head}}" alt="{{include.name}}" loading="lazy" width="16" height="9">
 
         {%- comment -%}Video gif content head{%- endcomment -%}
@@ -29,7 +29,7 @@ Card component for project information
         {% assign mp4Path = include.head | replace: '.webm', '.mp4' %}
 
         {% include videoGif.html
-        class="min-h-full min-w-full object-cover shrink-0 group-hover:scale-110 transition-transform ease-out
+        class="min-h-full min-w-full object-cover shrink-0 group-hover:scale-105 transition-transform ease-out
         duration-200"
         webm=include.head
         mp4=mp4Path
@@ -43,7 +43,7 @@ Card component for project information
         <div class="flex shrink items-center">
             <h2 class="text-xl lg:text-2xl font-display font-medium">{{include.name}}</h2>
 
-            <div class="grow flex justify-end text-xl lg:text-2xl font-medium">
+            <div class="grow flex justify-end text-xl lg:text-2xl font-medium group-hover:translate-x-1 transition-transform ease-in">
                 <ion-icon class="project-card-icon" name="arrow-forward-sharp"></ion-icon>
             </div>
         </div>
