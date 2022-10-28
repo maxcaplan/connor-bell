@@ -1,5 +1,5 @@
 - name: Generative Art
-  head: assets/images/projects/gifzone.gif
+  head: assets/images/projects/gifzone.webm
   link: projects/generative.html
   tags:
     - shaders
@@ -7,7 +7,7 @@
   description: I make gifs
 
 - name: ShaderChain
-  head: assets/images/projects/shaderchain.jpg
+  head: assets/images/projects/shaderchain.png
   link: projects/shaderchain.html
   tags:
     - shaders
@@ -15,7 +15,7 @@
   description: Open source shader playground built in C++ and OpenFrameworks.
 
 - name: AR-SDFView
-  head: assets/images/projects/arsdfview.jpg
+  head: assets/images/projects/arsdfview.png
   link: projects/arsdfview.html
   tags:
     - Swift
@@ -24,14 +24,14 @@
   description: iOS framework to render SDFs in AR
 
 - name: Glitch Wizard
-  head: assets/images/projects/glitchwizard.jpg
+  head: assets/images/projects/glitchwizard.png
   link: projects/glitchwizard.html
   tags:
     - iOS shaders
   description: App I made with Allan Lavell that distorts images, gifs and videos
 
 - name: Angeline - Interactive VR Fractals
-  head: assets/images/projects/angeline.jpg
+  head: assets/images/projects/angeline.png
   link: projects/angeline.html
   tags:
     - shaders
@@ -46,7 +46,7 @@
   description: Intro Titles collab with Cale Bradbury
 
 - name: Moon Shadow
-  head: assets/images/projects/moonshadow.jpg
+  head: assets/images/projects/moonshadow.png
   link: projects/moonshadow.html
   tags:
     - iOS shaders
@@ -60,7 +60,7 @@
   description: Single page "link-in-bio" website template I host at links.connorbell.ca
 
 - name: Threejs-Fractal
-  head: assets/images/projects/threejs-fractal.jpg
+  head: assets/images/projects/threejs-fractal.png
   link: projects/threejs-fractal.html
   tags:
     - web shaders
