@@ -33,7 +33,10 @@ Angeline is an interactive VR fractal zone made in Unity with a technique called
 
 [Looping Gifs](https://drive.google.com/open?id=1boYdVdnJXn6Q664TWTHLO2hUJCQqLUf7)
 
-![Angeline A VR Space](/assets/images/angeline/angeline.gif)
+{% include videoGif.html 
+webm="/assets/images/angeline/angeline.webm" 
+mp4="/assets/images/angeline/angeline.mp4"
+lazy=true %}
 
 <script src="/assets/js/lightbox-gallery.js"></script>
 <script src="/assets/js/lite-yt-embed.js"></script>
