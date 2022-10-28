@@ -5,14 +5,29 @@ Component that replicates gif behaviour with video content
 @param [webm] {string} - path to a webm video file
 @param [mp4] {string} - path to a mp4 video file. Fallback for webm video if webm is provided
 {%- endcomment -%}
-<video autoplay loop muted playsinline preload="none" id="{{ include.id }}" class="{{ include.class }}">
+
+{% assign videoClass = include.class %}
+
+{% if include.lazy %}
+{% assign videoClass = "lazy-load " | append: videoClass %}
+{% endif %}
+
+<video autoplay loop muted playsinline preload="none" id="{{ include.id }}" class="{{ videoClass }}">
 
     {% if include.webm %}
+    {% if include.lazy %}
     <source data-src="{{ include.webm }}" type="video/webm">
+    {% else %}
+    <source src="{{ include.webm }}" type="video/webm">
+    {% endif %}
     {% endif %}
 
     {% if include.mp4 %}
+    {% if include.lazy %}
     <source data-src="{{ include.mp4 }}" type="video/mp4">
+    {% else %}
+    <source src="{{ include.webm }}" type="video/webm">
+    {% endif %}
     {% endif %}
 
 </video>
