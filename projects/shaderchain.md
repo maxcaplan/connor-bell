@@ -8,7 +8,7 @@ title: ShaderChain
 
 ![Shaderchain Screenshot]({{absolute_url}}/assets/images/shaderchain/shaderchain.jpg)
 
-{% include gallery.html path="/assets/images/shaderchain/gallery" size="md" %}
+{% include gallery.html path="/assets/images/shaderchain/gallery/" size="md" %}
 
 ### Features
 * Build a shader stack with each rendered texture input to the next pass

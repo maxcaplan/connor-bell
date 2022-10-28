@@ -20,7 +20,7 @@ title: Animation
   class="w-full aspect-auto" />
 
 
-{% include gallery.html path="/assets/images/gifs/gallery" size="md" %}
+{% include gallery.html path="/assets/images/gifs/gallery/" size="md" %}
 
 Update June 2021: I’ve started posting sketches on [https://shaders.connorbell.ca](https://shaders.connorbell.ca). These interactive WebGL shaders are automatically deployed from my software, ShaderChain.
 

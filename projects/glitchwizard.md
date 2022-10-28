@@ -25,7 +25,7 @@ title: Glitch Wizard
 <img src="/assets/images/appstore.svg" height="64" alt="Download on the App Store" class="h-16 max-w-full"/>
 </a>
 
-{% include gallery.html path="/assets/images/gw/gallery" %}
+{% include gallery.html path="/assets/images/gw/gallery/" %}
 
 <script src="/assets/js/lightbox-gallery.js"></script>
 <script src="/assets/js/lite-yt-embed.js"></script>
