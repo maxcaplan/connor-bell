@@ -10,7 +10,8 @@ title: Animation
 # Physarum Simulation
 
 <video width="720" height="500" controls>
-  <source src="{{absolute_url}}/assets/videos/physarum/phys.mp4#t=4" type="video/mp4">
+  <source src="/assets/videos/physarum/phys.webm#t=4" type="video/webm">
+  <source src="/assets/videos/physarum/phys.mp4#t=4" type="video/mp4">
 Video not supported
 </video>
 

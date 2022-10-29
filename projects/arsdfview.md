@@ -4,7 +4,8 @@ title: AR-SDF
 ---
 
 <video width="720" height="500" controls>
-  <source src="{{absolute_url}}/assets/videos/arsdfview/AR-SDF.mp4" type="video/mp4">
+  <source src="/assets/videos/arsdfview/AR-SDF.webm" type="video/webm">
+  <source src="/assets/videos/arsdfview/AR-SDF.mp4" type="video/mp4">
 Video not supported
 </video>
 
