@@ -5,7 +5,14 @@ title: FITC
 
 # FITC Web Unleashed Intro Credits
 
-![fitc]({{absolute_url}}/assets/images/projects/fitc.png)
+<picture>
+    <source type="image/webp" srcset="/assets/images/fitc/fitc.webp" media="(min-width: 600px)" />
+    <source type="image/webp" srcset="/assets/images/fitc/fitc-600w.webp" />
+
+    <source type="image/jpeg" srcset="/assets/images/fitc/fitc.jpg" media="(min-width: 600px)" />
+    <img src="/assets/images/fitc/fitc-600w.jpg" alt="Banner"
+        class="w-full aspect-auto" loading="lazy" />
+</picture>
 
 Audio-reactive realtime intro credits for FITC Web Unleashed.
 

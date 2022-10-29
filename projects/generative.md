@@ -9,15 +9,14 @@ title: Animation
 
 # Generative Art
 
-<!-- ![Banner]({{absolute_url}}/assets/images/gifs/banner.png) -->
+<picture>
+    <source type="image/webp" srcset="/assets/images/gifs/banner-800w.webp" media="(min-width: 600px)" />
+    <source type="image/webp" srcset="/assets/images/gifs/banner-600w.webp" />
 
-<img
-  srcset="/assets/images/gifs/banner_600w.png 600w, /assets/images/gifs/banner_800w.png 800w"
-  sizes="(max-width: 600px) 600px, 
-         800px"
-  src="/assets/images/gifs/banner_800w.png"
-  alt="Banner"
-  class="w-full aspect-auto" />
+    <source type="image/jpeg" srcset="/assets/images/gifs/banner-800w.jpg" media="(min-width: 600px)" />
+    <img src="/assets/images/gifs/banner-600w.jpg" alt="Banner"
+        class="w-full aspect-auto" loading="lazy" />
+</picture>
 
 
 {% include gallery.html path="/assets/images/gifs/gallery/" size="md" %}

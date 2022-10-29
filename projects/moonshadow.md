@@ -3,7 +3,16 @@ layout: project
 title: Moon Shadow
 ---
 
-![Banner]({{absolute_url}}/assets/images/moonshadow/banner.png)
+<!-- ![Banner]({{absolute_url}}/assets/images/moonshadow/banner.png) -->
+
+<picture>
+    <source type="image/webp" srcset="/assets/images/moonshadow/banner-800w.webp" media="(min-width: 600px)" />
+    <source type="image/webp" srcset="/assets/images/moonshadow/banner-600w.webp" />
+
+    <source type="image/jpeg" srcset="/assets/images/moonshadow/banner-800w.png" media="(min-width: 600px)" />
+    <img src="/assets/images/moonshadow/banner-600w.png" alt="Banner"
+        class="w-full aspect-auto" loading="lazy" />
+</picture>
 
 ## Platform: iOS, Android
 

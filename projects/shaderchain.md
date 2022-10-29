@@ -4,9 +4,16 @@ title: ShaderChain
 ---
 
 # ShaderChain
-## Multi-platform open source shader composition tool  
+## Multi-platform open source shader composition tool
 
-![Shaderchain Screenshot]({{absolute_url}}/assets/images/shaderchain/shaderchain.jpg)
+<picture>
+    <source type="image/webp" srcset="/assets/images/shaderchain/shaderchain-800w.webp" media="(min-width: 600px)" />
+    <source type="image/webp" srcset="/assets/images/shaderchain/shaderchain-600w.webp" />
+
+    <source type="image/jpeg" srcset="/assets/images/shaderchain/shaderchain-800w.jpg" media="(min-width: 600px)" />
+    <img src="/assets/images/shaderchain/shaderchain-600w.jpg" alt="Shaderchain"
+        class="w-full aspect-auto" loading="lazy" />
+</picture>
 
 {% include gallery.html path="/assets/images/shaderchain/gallery/" size="md" %}
 

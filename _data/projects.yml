@@ -1,5 +1,5 @@
 - name: Generative Art
-  head: assets/images/projects/gifzone.webm
+  head: assets/images/projects/gifzone/gifzone.webm
   link: projects/generative.html
   tags:
     - shaders
@@ -7,7 +7,7 @@
   description: I make gifs
 
 - name: ShaderChain
-  head: assets/images/projects/shaderchain-400w.png
+  head: assets/images/projects/shaderchain/shaderchain-400w.webp
   link: projects/shaderchain.html
   tags:
     - shaders
@@ -15,7 +15,7 @@
   description: Open source shader playground built in C++ and OpenFrameworks.
 
 - name: AR-SDFView
-  head: assets/images/projects/arsdfview-400w.png
+  head: assets/images/projects/arsdfview/arsdfview-400w.webp
   link: projects/arsdfview.html
   tags:
     - Swift
@@ -24,21 +24,21 @@
   description: iOS framework to render SDFs in AR
 
 - name: Glitch Wizard
-  head: assets/images/projects/glitchwizard-400w.png
+  head: assets/images/projects/glitchwizard/glitchwizard-400w.webp
   link: projects/glitchwizard.html
   tags:
     - iOS shaders
   description: App I made with Allan Lavell that distorts images, gifs and videos
 
 - name: Angeline - Interactive VR Fractals
-  head: assets/images/projects/angeline-400w.png
+  head: assets/images/projects/angeline/angeline-400w.webp
   link: projects/angeline.html
   tags:
     - shaders
   description: Interactive VR world built with a custom conemarching rendering algorithm.
 
 - name: FITC Web Unleashed Intro Credits
-  head: assets/images/projects/fitc-400w.png
+  head: assets/images/projects/fitc/fitc-400w.webp
   link: projects/fitc.html
   tags:
     - Threejs
@@ -46,21 +46,21 @@
   description: Intro Titles collab with Cale Bradbury
 
 - name: Moon Shadow
-  head: assets/images/projects/moonshadow-400w.png
+  head: assets/images/projects/moonshadow/moonshadow-400w.webp
   link: projects/moonshadow.html
   tags:
     - iOS shaders
   description: Free iOS/Android app that chroma-keys generative shaders to colors of live video
 
 - name: Shader-links
-  head: assets/images/projects/links-400w.png
+  head: assets/images/projects/links/links-400w.webp
   link: projects/shaderlinks.html
   tags:
     - web shaders
   description: Single page "link-in-bio" website template I host at links.connorbell.ca
 
 - name: Threejs-Fractal
-  head: assets/images/projects/threejs-fractal-400w.png
+  head: assets/images/projects/threejs-fractal/fractal-400w.webp
   link: projects/threejs-fractal.html
   tags:
     - web shaders
@@ -68,7 +68,7 @@
   hide: true
 
 - name: Physarum-Simulations
-  head: assets/images/projects/physarum-400w.png
+  head: assets/images/projects/physarum/physarum-400w.webp
   link: projects/physarum.html
   tags:
     - Metal
@@ -76,7 +76,7 @@
   description: Slime mold simulation experiment with particle agents
 
 - name: Blog
-  head: assets/images/projects/physarum-400w.png
+  head: assets/images/projects/physarum/physarum-400w.webp
   link: projects/blog.html
   tags:
     - writing
