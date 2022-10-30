@@ -17,22 +17,72 @@
                     contact
                 </a>
 
-                {% for social in site.data.socials %}
-
-                <a class="text-2xl leading-none" href="{{social.link}}" target="_blank">
+                <a class="text-2xl leading-none" href="https://twitter.com/connrbell" target="_blank">
                     <span class="inline-block" style="min-width: 24px; min-height: 24px;">
-                        <ion-icon name="{{social.logo}}"></ion-icon>
+                        <ion-icon name="logo-twitter"></ion-icon>
                     </span>
                 </a>
 
-                {% endfor %}
+                <a class="text-2xl leading-none" href="https://instagram.com/connrbell" target="_blank">
+                    <span class="inline-block" style="min-width: 24px; min-height: 24px;">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </span>
+                </a>
+
+                <a class="text-2xl leading-none" href="https://linkedin.com/connorbell" target="_blank">
+                    <span class="inline-block" style="min-width: 24px; min-height: 24px;">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </span>
+                </a>
             </div>
         </div>
 
-        <div id="menu" class="grow flex md:hidden flex-row justify-end" href="#">
-            <a href="#" class="sticky top-0">
-                <ion-icon size="large" name="menu-outline"></ion-icon>
-            </a>
+        <div id="menu" class="grow flex md:hidden flex-row justify-end items-center" href="#">
+            <button id="mobile-nav-open" class="fixed aspect-square p-2 rounded bg-black/50">
+                <ion-icon size="large" name="menu-sharp"></ion-icon>
+            </button>
         </div>
     </div>
 </nav>
+
+<div id="mobile-nav"
+    class="fixed top-0 bottom-0 right-0 w-2/3 z-50 translate-x-full transition-transform bg-neutral-900">
+    <div class="flex flex-col h-full px-4">
+        <div class="flex flex-row justify-end items-center py-4">
+            <button id="mobile-nav-close" class="aspect-square rounded">
+                <ion-icon size="large" name="close-sharp"></ion-icon>
+            </button>
+        </div>
+
+        <div class="grow flex items-center">
+            <div class="grid grid-flow-row place-items-center h-fit gap-6 w-full">
+                <a class="w-full text-lg text-center hover:text-cyan-200 hover:underline" href="/#projects">projects</a>
+                <a class="w-full text-lg text-center hover:text-cyan-200 hover:underline" href="/#about">about</a>
+                <a class="w-full text-lg text-center leading-none px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition"
+                    href="/#contact">
+                    contact
+                </a>
+            </div>
+        </div>
+
+        {% include divider.html class="my-3" %}
+
+        <div class="flex justify-center">
+            <div class="flex flex-row gap-6 py-4 text-neutral-500">
+                <a class="flex items-center" href="https://twitter.com/connrbell" target="_blank">
+                    <ion-icon size="large" name="logo-twitter"></ion-icon>
+                </a>
+
+                <a class="flex items-center" href="https://instagram.com/connrbell" target="_blank">
+                    <ion-icon size="large" name="logo-instagram"></ion-icon>
+                </a>
+
+                <a class="flex items-center" href="https://linkedin.com/connorbell" target="_blank">
+                    <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/navbar.js" async></script>
