@@ -1,1 +1,6 @@
-<div class="border-b border-neutral-500 w-full"></div>
+{%- comment -%}
+Horizontal divider component
+@param [class] {string} - classes to add to root element
+{%- endcomment -%}
+
+<div class="{{ 'border-b border-neutral-500 w-full ' | append: include.class }}"></div>
