@@ -138,10 +138,8 @@ async function main() {
   function onIntersectionUpdate(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log("start render")
         startRender()
       } else {
-        console.log("stop render")
         stopRender()
       }
     })
