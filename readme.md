@@ -15,7 +15,7 @@ gem install jekyll bundler
 
 Install ruby dependencies
 ```bash
-bundle install
+bundle
 ```
 
 Install yarn dependencies
