@@ -20,11 +20,11 @@ const galleriesMap = galleries.reduce((result, el) => {
 // Add event listeners
 galleriesMap.forEach(el => {
     // Add click listener to gallery
-    el.gallery.addEventListener('click', e => handleGalleryClick(e, el.lightbox))
+    el.gallery.addEventListener('click', e => handleGalleryClick(e, el.lightbox, galleries))
     // Add click listener to lightbox
-    el.lightbox.addEventListener('click', e => handleLightboxClick(e, el.lightbox), false)
+    el.lightbox.addEventListener('click', e => handleLightboxClick(e, el.lightbox, galleries), false)
     // Add keyboard listener to lightbox
-    document.addEventListener('keydown', e => handleLightboxKeydown(e, el.lightbox))
+    document.addEventListener('keydown', e => handleLightboxKeydown(e, el.lightbox, galleries))
 })
 
 /**
@@ -32,7 +32,7 @@ galleriesMap.forEach(el => {
  * @param {MouseEvent} e - a click event
  * @param {Element} lightbox - the lightbox element associated to this gallery
  */
-function handleGalleryClick(e, lightbox) {
+function handleGalleryClick(e, lightbox, galleries) {
     e.preventDefault()
 
     // If a thumbnail is clicked, open corresponding image in lightbox
@@ -40,7 +40,7 @@ function handleGalleryClick(e, lightbox) {
 
     if (galleryItem && galleryItem.dataset.thumbIndex != undefined) {
         setLightboxSlide(lightbox, Number(galleryItem.dataset.thumbIndex))
-        openLightbox(lightbox)
+        openLightbox(lightbox, galleries)
     }
 }
 
@@ -49,13 +49,7 @@ function handleGalleryClick(e, lightbox) {
  * @param {MouseEvent} e - a click event
  * @param {Element} lightbox - the lightbox element to handle the click for
  */
-function handleLightboxClick(e, lightbox) {
-    // Close button
-    if (e.target.closest(".lightbox-gallery-close")) {
-        closeLightbox(lightbox)
-        return
-    }
-
+function handleLightboxClick(e, lightbox, galleries) {
     // Prev nav button
     if (e.target.closest(".lightbox-gallery-prev")) {
         prevLightboxSlide(lightbox)
@@ -68,9 +62,15 @@ function handleLightboxClick(e, lightbox) {
         return
     }
 
+    // Close button
+    if (e.target.closest(".lightbox-gallery-close")) {
+        closeLightbox(lightbox, galleries)
+        return
+    }
+
     // Close lightbox if clicked outside of content
     if (!e.target.closest(".lightbox-gallery-lightbox-content")) {
-        closeLightbox(lightbox)
+        closeLightbox(lightbox, galleries)
         return
     }
 }
@@ -80,7 +80,7 @@ function handleLightboxClick(e, lightbox) {
  * @param {KeyboardEvent} e - a keyboard event 
  * @param {*} lightbox - the lightbox element to handle the keydown for
  */
-function handleLightboxKeydown(e, lightbox) {
+function handleLightboxKeydown(e, lightbox, galleries) {
     // Prev slide nav
     if (e.code === 'ArrowLeft') {
         prevLightboxSlide(lightbox)
@@ -91,7 +91,7 @@ function handleLightboxKeydown(e, lightbox) {
     }
     // Close lightbox
     if (e.code === 'Escape') {
-        closeLightbox(lightbox)
+        closeLightbox(lightbox, galleries)
     }
 }
 
@@ -151,21 +151,51 @@ function prevLightboxSlide(lightbox) {
 }
 
 /**
+ * Pauses all gallery thumbnail videos
+ * @param {Array} galleries - an array of gallery elements 
+ */
+function pauseGalleryVideos(galleries) {
+    galleries.forEach(gallery => {
+        const videos = Array.from(gallery.querySelectorAll("video"))
+
+        videos.forEach(video => {
+            video.pause()
+        })
+    })
+}
+
+/**
+ * Plays all gallery thumbnail videos
+ * @param {Array} galleries - an array of gallery elements 
+ */
+function playGalleryVideos(galleries) {
+    galleries.forEach(gallery => {
+        const videos = Array.from(gallery.querySelectorAll("video"))
+
+        videos.forEach(video => {
+            video.play()
+        })
+    })
+}
+
+/**
  * Makes a lightbox element visible
  * @param {Element} lightbox - the lightbox element to open
  */
-function openLightbox(lightbox) {
+function openLightbox(lightbox, galleries) {
     lightbox.classList.remove("hidden")
     document.documentElement.style.overflowY = "hidden"
+    pauseGalleryVideos(galleries)
 }
 
 /**
  * Makes a lightbox element hidden
  * @param {Element} lightbox - the lightbox element to close
  */
-function closeLightbox(lightbox) {
+function closeLightbox(lightbox, galleries) {
     lightbox.classList.add("hidden")
     document.documentElement.style.overflowY = "auto"
+    playGalleryVideos(galleries)
 }
 
 /** 
